@@ -39,7 +39,7 @@ class Controller
     }
     
     /**
-     *This method renders the hot to page
+     *This method renders the how to page
      *
      *@param $f3 variables
      */    

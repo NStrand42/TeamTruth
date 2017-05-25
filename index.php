@@ -27,7 +27,7 @@
     //route for the submissions page
     $f3->route('GET /submissions', function($f3) {
         $controller = new Controller();
-		$controller->renderSubmissions($f3); 
+		$controller->renderHome($f3); 
     });
     
     //route for the how to page
