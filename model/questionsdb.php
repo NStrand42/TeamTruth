@@ -37,6 +37,11 @@ class Questionsdb
         //returnFavorites(truth/dare)
         //-takes truth or dare parameter and returns top “50” questions
         
+        //userSubmissions(username)
+        //-takes a username and returns an array of rows ‘question => “The question”’,
+        //‘truth/dare’ => “”Truth” or “Dare””, ‘category’ => “Relationship etc”
+        
+        
         //allTruth() = all Random button
         //-returns rows of all truth
         
