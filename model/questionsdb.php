@@ -28,4 +28,42 @@ class Questionsdb
                 die( "Error!: " . $e->getMessage());
             }
         }
+        
+        //createQuestion(Question, category,truth/dare, user)
+        
+        //createUser(userID, password)
+        //-creates a user related to a password
+        
+        //returnFavorites(truth/dare)
+        //-takes truth or dare parameter and returns top “50” questions
+        
+        //allTruth() = all Random button
+        //-returns rows of all truth
+        
+        //tRelationship(allTruth[])
+        //-	goes through truth array and returns all truths with relationship category
+        
+        //tTeen(allTruth[])
+        //-	goes through truth array and returns all truths with teen category
+        
+        //tKids(allTruth[])
+        //-	goes through truth array and returns all truths with kids category
+        
+        //tMyPersonal(allTruth[])
+        //-returns all questions array with username = SESSION[username]
+        
+        //allDare() = Random Dare
+        
+        //dTeen(dare[])
+        //-	goes through dare array and returns all dares with teen category
+        
+        //dKids()
+        //-	goes through dare array and returns all dares with kids category
+        
+        //dRelationship(dare[])
+        //-	goes through dare array and returns all dares with relationship category
+        
+        //dMyPersonal()
+        //-	returns all questions array with username = SESSION[username]
+
 }
