@@ -3,6 +3,7 @@
 
     //Require the autoload file
     require_once('vendor/autoload.php');
+    require_once('view/header.html');
 
     session_start();
     
