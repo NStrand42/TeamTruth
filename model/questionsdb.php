@@ -1,6 +1,6 @@
 <?php
 
-class Questionsdb
+class QuestionsDB
 {
     private $_pdo;
         
