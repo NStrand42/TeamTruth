@@ -1,0 +1,15 @@
+{
+    "name": "teamtruth",
+    "authors": [
+        {
+            "name": "Micheline Bourque and Nathan Strand",
+            "email": "nstrand2@mail.greenriver.edu"
+        }
+    ],
+    "require": {
+        "bcosca/fatfree-core": "dev-master"
+    },
+    "autoload": {
+        "classmap": ["model/", "classes/"]
+    }
+}
