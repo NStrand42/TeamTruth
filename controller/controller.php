@@ -53,7 +53,7 @@ class Controller
      *@param $f3 variables
      */    
     function renderCreateUser($f3) {
-        echo Template::instance()->render('view/createuser.php');
+        echo Template::instance()->render('view/createuser.html');
     }
     
 }
