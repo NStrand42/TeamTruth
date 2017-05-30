@@ -99,10 +99,12 @@
                     <div class="col-sm-6">
                         
                         <div class="row">
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                   <h1>Player 2: ###</h1> 
-                                </div>                               
+                            <div class="col-sm-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                       <h1>Player 2: ###</h1> 
+                                    </div>                               
+                                </div>
                             </div>
                         </div>
                         
@@ -110,7 +112,7 @@
                             <div class="col-sm-12">
                                 <div class="panel panel-default">
                                     <div class="panel-heading"><h1>Dare</h1></div>
-                                    <div class="panel-body">Do a handstand</div>
+                                    <div class="panel-body"><h6>Do a handstand</h6></div>
                                     <div class="panel-heading"><h1>Chicken -4 Score</h1></div>
                                     
                                     <div class="panel-heading">
@@ -129,12 +131,14 @@
                         
                     </div>
                     
-                    <div class="col-sm-12">
-                        
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <div class="panel panel-default">
+                            <div class="panel body"><h1>Player 1's Turn! Score ###</h1></div>                         
+                        </div>    
                     </div>
                     
                     <div class="col-sm-12">
-                        
+                        <button type="button" class="btn btn-secondary pull-right">Login</button>                       
                     </div>
                 </div>
                 
