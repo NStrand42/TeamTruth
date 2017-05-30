@@ -19,7 +19,7 @@
 
     
     //Define a default route
-    $f3->route('GET /',function($f3) {
+    $f3->route('GET|POST /',function($f3) {
         $controller = new Controller();
 		$controller->renderHome($f3);  
     });
