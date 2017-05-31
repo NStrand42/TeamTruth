@@ -138,7 +138,12 @@
                     </div>
                     
                     <div class="col-sm-12">
-                        <button type="button" class="btn btn-secondary pull-right">Login</button>                       
+                        <div class="col-sm-3">
+                            <button class="btn btn-lg btn-success btn-block login-button" type="submit">Create User</button>
+                        </div>
+                        <div class="col-sm-3 col-sm-offset-6">
+                            <button class="btn btn-lg btn-success btn-block login-button" type="submit">Login</button>
+                        </div> 
                     </div>
                 </div>
                 
