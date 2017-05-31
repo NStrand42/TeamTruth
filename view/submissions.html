@@ -1,5 +1,5 @@
 <body>
-    <div class="container-fluid">
+    <div class="container">
         <form action="http://mbourque.greenrivertech.net/328/TeamTruth/" method="post" class="form-horizontal">
             <div class="row">
                 
@@ -104,6 +104,15 @@
                         
                     </div>
                     
+                </div>
+                
+                <div class="col-sm-12">
+                    <div class="col-sm-2">
+                        <button class="btn btn-lg btn-success btn-block login-button" type="submit">Go Back</button>
+                    </div>
+                    <div class="col-sm-2 col-sm-offset-8">
+                        <button class="btn btn-lg btn-success btn-block login-button" type="submit">Logout</button>
+                    </div> 
                 </div>
                 
             </div>
