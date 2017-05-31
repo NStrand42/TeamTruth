@@ -48,6 +48,61 @@
                 </div>
                        
                 <div class="col-sm-12">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        
+                        <div class="col-sm-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"><h4>My Submissions</h4></div>
+                                <div class="panel-body">
+                                    
+                                    <div class="table table-responsive">
+                                        <table id="job-table" class="table table-hover table-bordered"  style="color:black;">
+                                            <thead>
+                                                <tr>
+                                                    <th class='text-center'>Truths</th>
+                                                    <th class='text-center'>Category</th>
+                                                    <th class='text-center'>Dares</th>
+                                                    <th class='text-center'>Category</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>Stuff</td>
+                                                    <td>Stuff2</td>
+                                                    <td>Stuff3</td>
+                                                    <td>Stuff4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Stuff</td>
+                                                    <td>Stuff2</td>
+                                                    <td>Stuff3</td>
+                                                    <td>Stuff4</td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                    <td>Stuff</td>
+                                                    <td>Stuff2</td>
+                                                    <td>Stuff3</td>
+                                                    <td>Stuff4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Stuff</td>
+                                                    <td>Stuff2</td>
+                                                    <td>Stuff3</td>
+                                                    <td>Stuff4</td>
+                                                </tr>                
+                                            </tbody> 
+                                        </table>                       
+
+                                    </div> 
+                                   
+                   
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
                     
                 </div>
                 
