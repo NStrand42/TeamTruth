@@ -411,3 +411,69 @@
 [30-May-2017 01:18:44 America/Chicago] HTTP 404 (GET /images/icon.gif)
 [30-May-2017 01:18:44 America/Chicago] [328/TeamTruth/vendor/bcosca/fatfree-core/base.php:1645] Base->error()
 [30-May-2017 01:18:44 America/Chicago] [328/TeamTruth/index.php:48] Base->run()
+[30-May-2017 22:43:10 America/Chicago] PHP Warning:  include(/home/nstrand/public_html/IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php): failed to open stream: No such file or directory in /home/nstrand/public_html/IT328/TeamTruth/vendor/composer/ClassLoader.php on line 444
+[30-May-2017 22:43:10 America/Chicago] PHP Warning:  include(): Failed opening '/home/nstrand/public_html/IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php' for inclusion (include_path='.:/opt/php54/lib/php') in /home/nstrand/public_html/IT328/TeamTruth/vendor/composer/ClassLoader.php on line 444
+[30-May-2017 22:43:10 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/nstrand/public_html/IT328/TeamTruth/index.php on line 13
+[30-May-2017 22:43:10 America/Chicago] PHP Warning:  include(/home/nstrand/public_html/IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php): failed to open stream: No such file or directory in /home/nstrand/public_html/IT328/TeamTruth/vendor/composer/ClassLoader.php on line 444
+[30-May-2017 22:43:10 America/Chicago] PHP Warning:  include(): Failed opening '/home/nstrand/public_html/IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php' for inclusion (include_path='.:/opt/php54/lib/php') in /home/nstrand/public_html/IT328/TeamTruth/vendor/composer/ClassLoader.php on line 444
+[30-May-2017 22:43:10 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/nstrand/public_html/IT328/TeamTruth/index.php on line 13
+[30-May-2017 22:43:10 America/Chicago] PHP Warning:  include(/home/nstrand/public_html/IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php): failed to open stream: No such file or directory in /home/nstrand/public_html/IT328/TeamTruth/vendor/composer/ClassLoader.php on line 444
+[30-May-2017 22:43:10 America/Chicago] PHP Warning:  include(): Failed opening '/home/nstrand/public_html/IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php' for inclusion (include_path='.:/opt/php54/lib/php') in /home/nstrand/public_html/IT328/TeamTruth/vendor/composer/ClassLoader.php on line 444
+[30-May-2017 22:43:10 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/nstrand/public_html/IT328/TeamTruth/index.php on line 13
+[30-May-2017 22:44:14 America/Chicago] PHP Warning:  include(/home/nstrand/public_html/IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php): failed to open stream: No such file or directory in /home/nstrand/public_html/IT328/TeamTruth/vendor/composer/ClassLoader.php on line 444
+[30-May-2017 22:44:14 America/Chicago] PHP Warning:  include(): Failed opening '/home/nstrand/public_html/IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php' for inclusion (include_path='.:/opt/php54/lib/php') in /home/nstrand/public_html/IT328/TeamTruth/vendor/composer/ClassLoader.php on line 444
+[30-May-2017 22:44:14 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/nstrand/public_html/IT328/TeamTruth/index.php on line 13
+[30-May-2017 22:44:14 America/Chicago] PHP Warning:  include(/home/nstrand/public_html/IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php): failed to open stream: No such file or directory in /home/nstrand/public_html/IT328/TeamTruth/vendor/composer/ClassLoader.php on line 444
+[30-May-2017 22:44:14 America/Chicago] PHP Warning:  include(): Failed opening '/home/nstrand/public_html/IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php' for inclusion (include_path='.:/opt/php54/lib/php') in /home/nstrand/public_html/IT328/TeamTruth/vendor/composer/ClassLoader.php on line 444
+[30-May-2017 22:44:14 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/nstrand/public_html/IT328/TeamTruth/index.php on line 13
+[30-May-2017 22:44:14 America/Chicago] PHP Warning:  include(/home/nstrand/public_html/IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php): failed to open stream: No such file or directory in /home/nstrand/public_html/IT328/TeamTruth/vendor/composer/ClassLoader.php on line 444
+[30-May-2017 22:44:14 America/Chicago] PHP Warning:  include(): Failed opening '/home/nstrand/public_html/IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php' for inclusion (include_path='.:/opt/php54/lib/php') in /home/nstrand/public_html/IT328/TeamTruth/vendor/composer/ClassLoader.php on line 444
+[30-May-2017 22:44:14 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/nstrand/public_html/IT328/TeamTruth/index.php on line 13
+[30-May-2017 22:45:19 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/nstrand/public_html/IT328/TeamTruth/index.php on line 13
+[30-May-2017 22:45:19 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/nstrand/public_html/IT328/TeamTruth/index.php on line 13
+[30-May-2017 22:45:19 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/nstrand/public_html/IT328/TeamTruth/index.php on line 13
+[30-May-2017 22:46:13 America/Chicago] HTTP 404 (GET /styles/main-style.css)
+[30-May-2017 22:46:13 America/Chicago] [IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php:1645] Base->error()
+[30-May-2017 22:46:13 America/Chicago] [IT328/TeamTruth/index.php:48] Base->run()
+[30-May-2017 22:46:13 America/Chicago] HTTP 404 (GET /images/icon.gif)
+[30-May-2017 22:46:13 America/Chicago] [IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php:1645] Base->error()
+[30-May-2017 22:46:13 America/Chicago] [IT328/TeamTruth/index.php:48] Base->run()
+[30-May-2017 22:46:46 America/Chicago] HTTP 404 (GET /styles/main-style.css)
+[30-May-2017 22:46:46 America/Chicago] [IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php:1645] Base->error()
+[30-May-2017 22:46:46 America/Chicago] [IT328/TeamTruth/index.php:48] Base->run()
+[30-May-2017 22:46:46 America/Chicago] HTTP 404 (GET /images/icon.gif)
+[30-May-2017 22:46:46 America/Chicago] [IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php:1645] Base->error()
+[30-May-2017 22:46:46 America/Chicago] [IT328/TeamTruth/index.php:48] Base->run()
+[30-May-2017 22:47:34 America/Chicago] HTTP 404 (GET /styles/main-style.css)
+[30-May-2017 22:47:34 America/Chicago] [IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php:1645] Base->error()
+[30-May-2017 22:47:34 America/Chicago] [IT328/TeamTruth/index.php:48] Base->run()
+[30-May-2017 22:47:35 America/Chicago] HTTP 404 (GET /images/icon.gif)
+[30-May-2017 22:47:35 America/Chicago] [IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php:1645] Base->error()
+[30-May-2017 22:47:35 America/Chicago] [IT328/TeamTruth/index.php:48] Base->run()
+[30-May-2017 22:48:51 America/Chicago] HTTP 404 (GET /styles/main-style.css)
+[30-May-2017 22:48:51 America/Chicago] [IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php:1645] Base->error()
+[30-May-2017 22:48:51 America/Chicago] [IT328/TeamTruth/index.php:48] Base->run()
+[30-May-2017 22:48:51 America/Chicago] HTTP 404 (GET /images/icon.gif)
+[30-May-2017 22:48:51 America/Chicago] [IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php:1645] Base->error()
+[30-May-2017 22:48:51 America/Chicago] [IT328/TeamTruth/index.php:48] Base->run()
+[30-May-2017 22:48:57 America/Chicago] HTTP 404 (GET /styles/main-style.css)
+[30-May-2017 22:48:57 America/Chicago] [IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php:1645] Base->error()
+[30-May-2017 22:48:57 America/Chicago] [IT328/TeamTruth/index.php:48] Base->run()
+[30-May-2017 22:48:57 America/Chicago] HTTP 404 (GET /images/icon.gif)
+[30-May-2017 22:48:57 America/Chicago] [IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php:1645] Base->error()
+[30-May-2017 22:48:57 America/Chicago] [IT328/TeamTruth/index.php:48] Base->run()
+[30-May-2017 22:50:33 America/Chicago] HTTP 404 (GET /styles/main-style.css)
+[30-May-2017 22:50:33 America/Chicago] [IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php:1645] Base->error()
+[30-May-2017 22:50:33 America/Chicago] [IT328/TeamTruth/index.php:48] Base->run()
+[30-May-2017 22:51:34 America/Chicago] HTTP 404 (GET /styles/main-style.css)
+[30-May-2017 22:51:34 America/Chicago] [IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php:1645] Base->error()
+[30-May-2017 22:51:34 America/Chicago] [IT328/TeamTruth/index.php:48] Base->run()
+[30-May-2017 22:51:35 America/Chicago] HTTP 404 (GET /images/icon.gif)
+[30-May-2017 22:51:35 America/Chicago] [IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php:1645] Base->error()
+[30-May-2017 22:51:35 America/Chicago] [IT328/TeamTruth/index.php:48] Base->run()
+[30-May-2017 22:52:06 America/Chicago] HTTP 404 (GET /styles/main-style.css)
+[30-May-2017 22:52:06 America/Chicago] [IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php:1645] Base->error()
+[30-May-2017 22:52:06 America/Chicago] [IT328/TeamTruth/index.php:48] Base->run()
+[30-May-2017 22:52:06 America/Chicago] HTTP 404 (GET /images/icon.gif)
+[30-May-2017 22:52:06 America/Chicago] [IT328/TeamTruth/vendor/bcosca/fatfree-core/base.php:1645] Base->error()
+[30-May-2017 22:52:06 America/Chicago] [IT328/TeamTruth/index.php:48] Base->run()

@@ -53,10 +53,7 @@
                         <div class="col-sm-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading"><h4>Please enter a new Dare</h4></div>
-                                <div class="panel-body">
-                                    
-                                    
-                                </div>
+                                <div class="panel-body"><h4>New Dare</h4></div>
                             </div>
                         </div>
                         
