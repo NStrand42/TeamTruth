@@ -10,8 +10,17 @@
                                     <div class="panel-heading"><h4>Please enter a new Truth</h4></div>
                                     <div class="panel-body"><h4>New Truth</h4>
                                         <div class="col-sm-12">
+                                            
                                             <label for="inputUsername" class="sr-only">Portrait</label>
                                             <input type="text" class="form-control" name="truth" placeholder="Enter new truth"value="Enter new truth" required autofocus>
+                                            
+                                            <label for="category" class="sr-only">Category</label>
+                                            <select class="form-control" name="categoryArray" id="category" value="<?= $previousChosen ?>">
+                                                <?php foreach (($categoryArray?:[]) as $category): ?>
+                                                    <option><?= $category ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                            
                                         </div>
                                         
                                         <div class="col-sm-6">
@@ -30,8 +39,16 @@
                                 <div class="panel-body"><h4>New Dare</h4>
                                 
                                     <div class="col-sm-12">
+                                        
                                         <label for="inputUsername" class="sr-only">Portrait</label>
                                         <input type="text" class="form-control" name="dare" placeholder="Enter new Dare"value="Enter new dare" required autofocus>
+                                        <label for="category" class="sr-only">Category</label>
+                                            <select class="form-control" name="categoryArray" id="category" value="<?= $previousChosen ?>">
+                                                <?php foreach (($categoryArray?:[]) as $category): ?>
+                                                    <option><?= $category ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                            
                                     </div>
                                     
                                     <div class="col-sm-6">
@@ -94,10 +111,8 @@
                                                 </tr>                
                                             </tbody> 
                                         </table>                       
-
                                     </div> 
-                                   
-                   
+                                
                                 </div>
                             </div>
                         </div>

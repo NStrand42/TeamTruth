@@ -26,7 +26,7 @@
                             <li>Kids</li>
                             <li>Random</li>
                             <li>My personal</li>
-                            <li>Create you own</li>
+                            <li>Create your own</li>
                         </ul>                       
                     </div>
                 </div>

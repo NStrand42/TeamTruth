@@ -35,6 +35,8 @@ class Controller
      *@param $f3 variables
      */
     function renderSubmissions($f3) {
+        $categoryArray = array('Relationships', 'Teen', 'Kids', 'Miscellaneous');
+        $f3->set('categoryArray', $categoryArray);
         echo Template::instance()->render('view/submissions.html');
     }
     
