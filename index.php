@@ -7,7 +7,6 @@
 
     session_start();
     
-    require_once('view/header.html');
     
     //Create an instance of the Base class
     $f3 = Base::instance();
@@ -25,9 +24,10 @@
     });
     
     //route for the submissions page
-    $f3->route('GET /submissions', function($f3) {
+    $f3->route('GET|POST /submissions', function($f3) {
+		$captureTorD = $_POST;
         $controller = new Controller();
-		$controller->renderSubmissions($f3); 
+		$controller->renderSubmissions($f3, $captureTorD); 
     });
     
     //route for the how to page

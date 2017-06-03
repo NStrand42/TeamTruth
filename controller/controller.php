@@ -34,7 +34,8 @@ class Controller
      *
      *@param $f3 variables
      */
-    function renderSubmissions($f3) {
+    function renderSubmissions($f3. $captureTorD) {
+        echo var_dump($captureTorD);
         $categoryArray = array('Relationships', 'Teen', 'Kids', 'Miscellaneous');
         $f3->set('categoryArray', $categoryArray);
         echo Template::instance()->render('view/submissions.html');
