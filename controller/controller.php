@@ -34,9 +34,27 @@ class Controller
      *
      *@param $f3 variables
      */
-    function renderSubmissions($f3. $captureTorD) {
-        echo var_dump($captureTorD);
+    function renderSubmissions($f3, $captureTorD) {
+        //echo var_dump($captureTorD);
         $categoryArray = array('Relationships', 'Teen', 'Kids', 'Miscellaneous');
+        
+    
+        
+        $truthArray[] = array('question' => 'how old are you',
+                            'category' => 'relationships');
+        
+        $truthArray[] = array('question' => 'how are you',
+                            'category' => 'kids');
+        
+        $dareArray[] = array('question' => 'do a handstand',
+                            'category' => 'relationships');
+        
+        $dareArray[] = array('question' => 'show me what you got',
+                            'category' => 'kids');
+        
+        $f3->set('truthArray', $truthArray);
+        $f3->set('dareArray', $dareArray);
+
         $f3->set('categoryArray', $categoryArray);
         echo Template::instance()->render('view/submissions.html');
     }

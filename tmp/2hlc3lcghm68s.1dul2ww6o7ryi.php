@@ -1,3 +1,6 @@
+<head>
+<?php echo $this->render('view/header.html',NULL,get_defined_vars(),0); ?>
+</head>
 <body>
     <div class="container">
         <div class="row">

@@ -1,4 +1,6 @@
+<head>
 <?php echo $this->render('view/header.html',NULL,get_defined_vars(),0); ?>
+</head>
 <body>
     <div class="container">       
         <div class="row">
@@ -12,10 +14,10 @@
                                 <form action="http://mbourque.greenrivertech.net/328/TeamTruth/submissions" method="post" class="form-horizontal">
                                     <div class="col-sm-12">                                        
                                             <label for="inputUsername" class="sr-only">Portrait</label>
-                                            <input type="text" class="form-control" name="truth" placeholder="Enter new truth"value="Enter new truth" required autofocus>
+                                            <input type="text" class="form-control" name="truthQuestion" placeholder="Enter new truth"value="" required autofocus>
                                             
                                             <label for="category" class="sr-only">Category</label>
-                                            <select class="form-control" name="categoryArray" id="category" value="<?= $previousChosen ?>">
+                                            <select class="form-control" name="tCategory" id="category" value="<?= $previousChosen ?>">
                                                 <?php foreach (($categoryArray?:[]) as $category): ?>
                                                     <option><?= $category ?></option>
                                                 <?php endforeach; ?>
@@ -37,9 +39,9 @@
                                     <div class="col-sm-12">
                                         
                                         <label for="inputUsername" class="sr-only">Portrait</label>
-                                        <input type="text" class="form-control" name="dare" placeholder="Enter new Dare"value="Enter new dare" required autofocus>
+                                        <input type="text" class="form-control" name="dareQuestion" placeholder="Enter new Dare"value="" required autofocus>
                                         <label for="category" class="sr-only">Category</label>
-                                            <select class="form-control" name="categoryArray" id="category" value="<?= $previousChosen ?>">
+                                            <select class="form-control" name="dCategory" id="category" value="<?= $previousChosen ?>">
                                                 <?php foreach (($categoryArray?:[]) as $category): ?>
                                                     <option><?= $category ?></option>
                                                 <?php endforeach; ?>
@@ -64,46 +66,49 @@
                             <div class="panel-heading"><h4>My Submissions</h4></div>
                             <div class="panel-body">
                                 
+                                <!--
                                 <div class="table table-responsive">
                                     <table id="job-table" class="table table-hover table-bordered"  style="color:black;">
                                         <thead>
                                             <tr>
                                                 <th class='text-center'>Truths</th>
                                                 <th class='text-center'>Category</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <?php foreach (($truthArray?:[]) as userQuestions): ?>
+                                            <tr>
+                                                <td><?= $userQuestions[question] ?></td>
+                                                <td><?= $userQuestions[category] ?></td>
+                                            </tr>
+                                            <?php endforeach; ?>
+                                        </tbody> 
+                                    </table>
+                                    
+                                </div>
+                            -->
+                                <!--
+                                <div class="table table-responsive">
+                                    <table id="job-table" class="table table-hover table-bordered"  style="color:black;">
+                                        <thead>
+                                            <tr>
                                                 <th class='text-center'>Dares</th>
                                                 <th class='text-center'>Category</th>
                                             </tr>
                                         </thead>
 
                                         <tbody>
+                                            <?php foreach (($dareArray?:[]) as userQuestions): ?>
                                             <tr>
-                                                <td>Stuff</td>
-                                                <td>Stuff2</td>
-                                                <td>Stuff3</td>
-                                                <td>Stuff4</td>
+                                                <td><?= $userQuestions[question] ?></td>
+                                                <td><?= $userQuestions[category] ?></td>
                                             </tr>
-                                            <tr>
-                                                <td>Stuff</td>
-                                                <td>Stuff2</td>
-                                                <td>Stuff3</td>
-                                                <td>Stuff4</td>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <td>Stuff</td>
-                                                <td>Stuff2</td>
-                                                <td>Stuff3</td>
-                                                <td>Stuff4</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Stuff</td>
-                                                <td>Stuff2</td>
-                                                <td>Stuff3</td>
-                                                <td>Stuff4</td>
-                                            </tr>                
+                                            <?php endforeach; ?>
                                         </tbody> 
-                                    </table>                       
-                                </div> 
+                                    </table>
+                                    -->
+                                </div>
                             
                             </div>
                         </div>
