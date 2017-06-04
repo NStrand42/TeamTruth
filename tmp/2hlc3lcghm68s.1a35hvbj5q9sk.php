@@ -1,6 +1,7 @@
 <head>
 <?php echo $this->render('view/header.html',NULL,get_defined_vars(),0); ?>
 </head>
+
 <body>
     <div class="container">       
         <div class="row">
@@ -66,7 +67,7 @@
                             <div class="panel-heading"><h4>My Submissions</h4></div>
                             <div class="panel-body">
                                 
-                                <!--
+                                
                                 <div class="table table-responsive">
                                     <table id="job-table" class="table table-hover table-bordered"  style="color:black;">
                                         <thead>
@@ -77,7 +78,7 @@
                                         </thead>
 
                                         <tbody>
-                                            <?php foreach (($truthArray?:[]) as userQuestions): ?>
+                                            <?php foreach (($truthArray?:[]) as $userQuestions): ?>
                                             <tr>
                                                 <td><?= $userQuestions[question] ?></td>
                                                 <td><?= $userQuestions[category] ?></td>
@@ -87,8 +88,8 @@
                                     </table>
                                     
                                 </div>
-                            -->
-                                <!--
+                            
+                                
                                 <div class="table table-responsive">
                                     <table id="job-table" class="table table-hover table-bordered"  style="color:black;">
                                         <thead>
@@ -99,7 +100,7 @@
                                         </thead>
 
                                         <tbody>
-                                            <?php foreach (($dareArray?:[]) as userQuestions): ?>
+                                            <?php foreach (($dareArray?:[]) as $userQuestions): ?>
                                             <tr>
                                                 <td><?= $userQuestions[question] ?></td>
                                                 <td><?= $userQuestions[category] ?></td>
@@ -107,7 +108,7 @@
                                             <?php endforeach; ?>
                                         </tbody> 
                                     </table>
-                                    -->
+                                    
                                 </div>
                             
                             </div>
