@@ -121,10 +121,10 @@
             
             <div class="col-sm-12">
                 <div class="col-sm-2">
-                    <button class="btn btn-lg btn-success btn-block login-button" type="submit">Go Back</button>
+                    <a href="./" class="btn btn-lg btn-success btn-block login-button" role="button">Go Back</a>
                 </div>
                 <div class="col-sm-2 col-sm-offset-8">
-                    <button class="btn btn-lg btn-success btn-block login-button" type="submit">Logout</button>
+                    <a href="./logout" class="btn btn-lg btn-success btn-block login-button" role="button">Logout</a>
                 </div> 
             </div>
             

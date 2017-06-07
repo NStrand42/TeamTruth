@@ -23,6 +23,15 @@
 		$controller->renderHome($f3);  
     });
     
+	//Define a default route
+    $f3->route('GET|POST /logout',function($f3) {
+        $controller = new Controller();
+		session_unset();
+		session_destroy();
+		session_start();
+		$controller->renderHome($f3);  
+    });
+	
     //route for the submissions page
     $f3->route('GET|POST /submissions', function($f3) {
 		$captureTorD = $_POST;

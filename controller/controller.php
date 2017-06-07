@@ -21,6 +21,16 @@ class Controller
     }
     
     /**
+     *This method logs the user out
+     *
+     *@param $f3 variables
+     */
+    function logout($f3) {
+        session_unset();
+         echo Template::instance()->render('view/homepage.html');  
+    }
+    
+    /**
      *This method renders the home page
      *
      *@param $f3 variables
