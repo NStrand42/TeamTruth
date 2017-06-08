@@ -9,8 +9,8 @@
             </div>             
         </div>
         <div class="row">
-            <div class="col-sm-12">
-                <button type="button" class="btn btn-secondary">Go Back</button>
+            <div class="col-sm-2">
+                <a href="./" class="btn btn-lg btn-success btn-block login-button" role="button">Go Back</a>
             </div>
         </div>
     </div>
