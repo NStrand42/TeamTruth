@@ -33,6 +33,37 @@ class QuestionsDB
         
         //createUser(userID, password)
         //-creates a user related to a password
+        function createUser($username, $password) {
+           $select = 'SELECT username FROM `user_table` WHERE username = :username';
+           $statement = $this->_pdo->prepare($select);
+           $statement->bindValue(':username', $username, PDO::PARAM_STR);
+           $statement->execute();
+           
+           while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+            
+                if($row['username'] == $username){
+                return false;
+                $usernameExists = true;
+                exit();
+                }
+           }
+           if(!$usernameExists) {
+            return $this->reallyAddUser($username, $password);
+            }
+        }
+        
+        function reallyAddUser($username, $password) {
+            $hash = sha1($password);
+            $insert = 'INSERT INTO user_table (username, password) VALUES (:username, :password)';
+             
+            $statement = $this->_pdo->prepare($insert);
+            $statement->bindValue(':username', $username, PDO::PARAM_STR);
+            $statement->bindValue(':password', $hash, PDO::PARAM_STR);
+            
+            $statement->execute();
+            
+            return true;
+        }
         
         //returnFavorites(truth/dare)
         //-takes truth or dare parameter and returns top “50” questions

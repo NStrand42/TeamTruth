@@ -43,6 +43,21 @@ class Controller
               $_SESSION['username'] = $username;
         }
         
+        echo $_POST['createUsername'] . $_POST['createPassword'];
+        
+        if(isset($_POST['createUsername'])){
+              $username = $_POST['createUsername'];
+              $password = $_POST['createPassword'];
+              
+              $questionsdb = new QuestionsDB();
+              $didTheyLogIn = $questionsdb->createUser($username, $password);
+              
+              if($didTheyLogIn){
+                $_SESSION['username'] = $username;
+              }
+              
+        }
+        
         
         $this->checkLoggedIn($f3);
       
