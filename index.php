@@ -34,9 +34,8 @@
 	
     //route for the submissions page
     $f3->route('GET|POST /submissions', function($f3) {
-		$captureTorD = $_POST;
         $controller = new Controller();
-		$controller->renderSubmissions($f3, $captureTorD); 
+		$controller->renderSubmissions($f3); 
     });
     
     //route for the how to page

@@ -36,6 +36,22 @@ class Controller
      *@param $f3 variables
      */
     function renderHome($f3) {
+        
+        if(isset($_POST['username'])){
+              $username = $_POST['username'];
+              $password = $_POST['password'];
+              $_SESSION['username'] = $username;
+        }
+        
+        
+        $this->checkLoggedIn($f3);
+      
+        
+        
+        echo $_SESSION['username'];
+        
+        
+        
         echo Template::instance()->render('view/homepage.html');  
     }
     
@@ -44,8 +60,8 @@ class Controller
      *
      *@param $f3 variables
      */
-    function renderSubmissions($f3, $captureTorD) {
-        //echo var_dump($captureTorD);
+    function renderSubmissions($f3) {
+        echo var_dump($_POST);
         $categoryArray = array('Relationships', 'Teen', 'Kids', 'Miscellaneous');
         
     

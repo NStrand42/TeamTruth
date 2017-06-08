@@ -144,70 +144,86 @@
                         <div class="col-sm-3">
                             
                             
-                            
-                            <button type="modal" class="btn btn-lg btn-success btn-block login-button" data-toggle="modal" data-target="#myModal">Create User</button>
+                            <check if="{{ @usernameCheck }}">
+                                <true>
+                                    <a href="./logout" class="btn btn-lg btn-success btn-block login-button" role="button">Logout</a>    
+                                </true>
+                                <false>
+                                    <button type="modal" class="btn btn-lg btn-success btn-block login-button" data-toggle="modal" data-target="#myModal">Create User</button>
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="myModal" role="dialog">
-                              <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Create User</h4>
-                                  </div>
-                                  <div class="modal-body">
-                                    <form action="./" method="post" class="form-horizontal">
-                                        <div class="form-group">
-                                            <label for="inputUsername" class="sr-only">Username</label>
-                                            <input type="text"  class="form-control" name="username" placeholder="Username" value="{{ @username }}" required autofocus>
-                                            <label for="inputPassword" class="sr-only">Password</label>
-                                            <input type="password" class="form-control" name="password" placeholder="Password"  required autofocus>
-                                            <label for="inputVerifyPassword" class="sr-only">Password</label>
-                                            <input type="password" class="form-control" name="verifyPassword" placeholder="Re-enter Password"  required autofocus>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="myModal" role="dialog">
+                                      <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Create User</h4>
+                                          </div>
+                                          <div class="modal-body">
+                                            <form action="./" method="post" class="form-horizontal">
+                                                <div class="form-group">
+                                                    <label for="inputUsername" class="sr-only">Username</label>
+                                                    <input type="text"  class="form-control" name="username" placeholder="Username" value="{{ @username }}" required autofocus>
+                                                    <label for="inputPassword" class="sr-only">Password</label>
+                                                    <input type="password" class="form-control" name="password" placeholder="Password"  required autofocus>
+                                                    <label for="inputVerifyPassword" class="sr-only">Password</label>
+                                                    <input type="password" class="form-control" name="verifyPassword" placeholder="Re-enter Password"  required autofocus>
+                                                </div>
+                                                
+                                              <button class="btn btn-lg btn-success btn-block login-button" type="submit">Log in</button>
+                                            </form>
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                          </div>
                                         </div>
-                                        
-                                      <button class="btn btn-lg btn-success btn-block login-button" type="submit">Log in</button>
-                                    </form>
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                                      </div>
+                                    </div>
+                                    
+                                </false>
+                                
+                            </check>
+                            
                             
                         </div>
                         <div class="col-sm-3 col-sm-offset-6">
                             
-                            
-                            <button type="modal" class="btn btn-lg btn-success btn-block login-button" data-toggle="modal" data-target="#myModal2">Login</button>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="myModal2" role="dialog">
-                              <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Login</h4>
-                                  </div>
-                                  <div class="modal-body">
-                                    <form action="./" method="post" class="form-horizontal">
-                                        <div class="form-group">
-                                            <label for="inputUsername" class="sr-only">Username</label>
-                                            <input type="text"  class="form-control" name="username" placeholder="Username" value="{{ @username }}" required autofocus>
-                                            <label for="inputPassword" class="sr-only">Password</label>
-                                            <input type="password" class="form-control" name="password" placeholder="Password"  required autofocus>
+                            <check if ="{{ @usernameCheck }}">
+                                <true>
+                                    <a href="./submissions" class="btn btn-lg btn-success btn-block login-button" role="button">My Submissions</a>
+                                </true>
+                                <false>
+                                    <button type="modal" class="btn btn-lg btn-success btn-block login-button" data-toggle="modal" data-target="#myModal2">Login</button>
+                                    
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="myModal2" role="dialog">
+                                      <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Login</h4>
+                                          </div>
+                                          <div class="modal-body">
+                                            <form action="./" method="post" class="form-horizontal">
+                                                <div class="form-group">
+                                                    <label for="inputUsername" class="sr-only">Username</label>
+                                                    <input type="text"  class="form-control" name="username" placeholder="Username" value="{{ @username }}" required autofocus>
+                                                    <label for="inputPassword" class="sr-only">Password</label>
+                                                    <input type="password" class="form-control" name="password" placeholder="Password"  required autofocus>
+                                                </div>
+                                                
+                                              <button class="btn btn-lg btn-success btn-block login-button" type="submit">Log in</button>
+                                            </form>
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                          </div>
                                         </div>
-                                        
-                                      <button class="btn btn-lg btn-success btn-block login-button" type="submit">Log in</button>
-                                    </form>
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                                      </div>
+                                    </div>
+                                </false>
+                            </check>
+                            
                         </div> 
                     </div>
                 </div>

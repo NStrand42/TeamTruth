@@ -11,7 +11,7 @@ class QuestionsDB
         function __construct()
         {
             //Require configuration file
-            require_once '/home/mbourque/blogsconfig.php';
+            require_once '/home/mbourque/truth_config.php';
             
             
             try {
