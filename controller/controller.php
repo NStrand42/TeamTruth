@@ -2,10 +2,10 @@
 
 class Controller
 {
-    private $sess;
+    private $questionsdb;
     
     function __construct() {
-       $this->sess = new Questionsdb;
+       $this->questionsdb = new QuestionsDB();
     }
     
     /**
@@ -40,33 +40,26 @@ class Controller
         if(isset($_POST['username'])){
               $username = $_POST['username'];
               $password = $_POST['password'];
-              $_SESSION['username'] = $username;
+              
+              if($this->questionsdb->usernameExists($username)){
+                $_SESSION['username'] = $username;
+              }
         }
-        
-        echo $_POST['createUsername'] . $_POST['createPassword'];
+
         
         if(isset($_POST['createUsername'])){
               $username = $_POST['createUsername'];
               $password = $_POST['createPassword'];
               
-              $questionsdb = new QuestionsDB();
-              $didTheyLogIn = $questionsdb->createUser($username, $password);
+              $didTheyLogIn = $this->questionsdb->createUser($username, $password);
               
               if($didTheyLogIn){
                 $_SESSION['username'] = $username;
               }
-              
         }
-        
         
         $this->checkLoggedIn($f3);
       
-        
-        
-        echo $_SESSION['username'];
-        
-        
-        
         echo Template::instance()->render('view/homepage.html');  
     }
     
@@ -78,8 +71,6 @@ class Controller
     function renderSubmissions($f3) {
         echo var_dump($_POST);
         $categoryArray = array('Relationships', 'Teen', 'Kids', 'Miscellaneous');
-        
-    
         
         $truthArray1 = array('question' => 'how old are you',
                             'category' => 'relationships');

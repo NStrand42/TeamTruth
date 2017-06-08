@@ -34,22 +34,16 @@ class QuestionsDB
         //createUser(userID, password)
         //-creates a user related to a password
         function createUser($username, $password) {
-           $select = 'SELECT username FROM `user_table` WHERE username = :username';
-           $statement = $this->_pdo->prepare($select);
-           $statement->bindValue(':username', $username, PDO::PARAM_STR);
-           $statement->execute();
+
+            $usernameExists = $this->usernameExists($username);
+
            
-           while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-            
-                if($row['username'] == $username){
-                return false;
-                $usernameExists = true;
-                exit();
-                }
-           }
            if(!$usernameExists) {
-            return $this->reallyAddUser($username, $password);
+                return $this->reallyAddUser($username, $password);
+                exit();
             }
+            
+            return false;
         }
         
         function reallyAddUser($username, $password) {
@@ -63,6 +57,22 @@ class QuestionsDB
             $statement->execute();
             
             return true;
+        }
+        
+        function usernameExists($username) {
+            $select = 'SELECT username FROM `user_table` WHERE username = :username';
+            $statement = $this->_pdo->prepare($select);
+            $statement->bindValue(':username', $username, PDO::PARAM_STR);
+            $statement->execute();
+           
+            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+            
+                if($row['username'] == $username){
+                return true;
+                exit();
+                }
+            }
+            return false;
         }
         
         //returnFavorites(truth/dare)
