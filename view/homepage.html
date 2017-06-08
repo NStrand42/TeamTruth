@@ -38,7 +38,7 @@
                     <div class="col-sm-12">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <h1>Tutorial</h1>
+                                <a href="./howtopage" class="btn btn-lg btn-success btn-block login-button" role="button">Tutorial</a>
                             </div>
                         </div>
                     </div>
