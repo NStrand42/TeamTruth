@@ -1,0 +1,83 @@
+.base {
+    background-color:  #00994d;
+	background: -webkit-linear-gradient(bottom, #00994d, #ffffff); /*Safari 5.1-6*/
+	background: -o-linear-gradient(top, #00994d, #ffffff); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(top, #00994d, #ffffff); /*Fx 3.6-15*/
+	background: linear-gradient(to top,  #00994d, #ffffff); /*Standard*/
+}
+
+.tdbutton {
+	background-color: white;
+	color: black;
+	border-color: grey;
+	border-radius: 20px;
+}
+
+.truth {
+	background-color: #ffff80 !important;
+	padding-bottom: 10px;
+}
+
+.dare {
+	background-color: #FFCC00 !important;
+	padding-bottom: 10px;
+}
+
+.truthsList {
+	background-color: #ffff80;
+	margin-bottom: 20px;
+
+}
+
+.daresList {
+	background-color: #FFCC00;
+
+}
+
+.like {
+	background-color: #333399;
+	color: white;
+}
+
+.chicken {
+	background-color: #994D4D !important;
+}
+
+.question {
+	background-color: #d1d1e0 !important;
+}
+
+#welcome {
+	margin-top: 20px;
+}
+
+.tdbutton:hover {
+     background:  #004d00;
+}
+
+ul {
+	padding: 0px;
+	list-style-type: none;
+}
+
+.truthButtons {
+	width: 100%;
+	background-color: #ffff80;
+	border: 1px solid #ccc;
+}
+
+.dareButtons {
+	width: 100%;
+	background-color: #FFCC00;
+	border: 1px solid #ccc;
+}
+
+.tabTColor {
+	background-color: red;
+}
+
+.tabDColor {
+	background-color: red;
+}
+
+

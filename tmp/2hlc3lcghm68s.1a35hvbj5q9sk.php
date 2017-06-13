@@ -2,7 +2,7 @@
 <?php echo $this->render('view/header.html',NULL,get_defined_vars(),0); ?>
 </head>
 
-<body>
+<body class="base">
     <div class="container">       
         <div class="row">
             
@@ -18,7 +18,7 @@
                                             <input type="text" class="form-control" name="truthQuestion" placeholder="Enter new truth"value="" required autofocus>
                                             
                                             <label for="category" class="sr-only">Category</label>
-                                            <select class="form-control" name="tCategory" id="category" value="<?= $previousChosen ?>">
+                                            <select class="form-control" name="category" id="category" value="<?= $previousChosen ?>">
                                                 <?php foreach (($categoryArray?:[]) as $category): ?>
                                                     <option><?= $category ?></option>
                                                 <?php endforeach; ?>
@@ -26,7 +26,7 @@
                                     </div>
                                         
                                     <div class="col-sm-6">
-                                        <button class="btn btn-lg btn-success btn-block login-button" type="submit">OK</button>
+                                        <button class="btn btn-lg btn-success btn-block login-button tdbutton" type="submit">OK</button>
                                     </div>
                                 </form>                                  
                             </div>
@@ -42,7 +42,7 @@
                                         <label for="inputUsername" class="sr-only">Portrait</label>
                                         <input type="text" class="form-control" name="dareQuestion" placeholder="Enter new Dare"value="" required autofocus>
                                         <label for="category" class="sr-only">Category</label>
-                                            <select class="form-control" name="dCategory" id="category" value="<?= $previousChosen ?>">
+                                            <select class="form-control" name="category" id="category" value="<?= $previousChosen ?>">
                                                 <?php foreach (($categoryArray?:[]) as $category): ?>
                                                     <option><?= $category ?></option>
                                                 <?php endforeach; ?>
@@ -50,7 +50,7 @@
                                     </div>
                                     
                                     <div class="col-sm-6">
-                                        <button class="btn btn-lg btn-success btn-block login-button" type="submit">OK</button>
+                                        <button class="btn btn-lg btn-success btn-block login-button tdbutton" type="submit">OK</button>
                                     </div>
                                 </form>                                
                             </div>   
@@ -110,7 +110,33 @@
                                     </table>
                                     
                                 </div>
-                            
+                                
+                                <?php if ($usertable  != null): ?>
+                                    <div class="table table-responsive">
+                                        <table id="job-table" class="table table-hover table-bordered"  style="color:black;">
+                                            <thead>
+                                                <tr>
+                                                    <th class='text-center'>Users</th>
+                                                    <th class='text-center'>Score</th>
+                                                </tr>
+                                            </thead>
+    
+                                            <tbody>
+                                                
+                                                    <?php foreach (($usertable?:[]) as $usersInfo): ?>
+                                                    <tr>
+                                                        <td><?= $usersInfo[username] ?></td>
+                                                        <td><?= $usersInfo[score] ?></td>
+                                                    </tr>
+                                                    <?php endforeach; ?>
+                                                    
+                                                
+                                                
+                                            </tbody> 
+                                        </table>
+                                        
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -121,10 +147,10 @@
             
             <div class="col-sm-12">
                 <div class="col-sm-2">
-                    <a href="./" class="btn btn-lg btn-success btn-block login-button" role="button">Go Back</a>
+                    <a href="./" class="btn btn-lg btn-success btn-block login-button tdbutton" role="button">Go Back</a>
                 </div>
                 <div class="col-sm-2 col-sm-offset-8">
-                    <a href="./logout" class="btn btn-lg btn-success btn-block login-button" role="button">Logout</a>
+                    <a href="./logout" class="btn btn-lg btn-success btn-block login-button tdbutton" role="button">Logout</a>
                 </div> 
             </div>
             

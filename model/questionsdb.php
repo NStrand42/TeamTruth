@@ -75,12 +75,243 @@ class QuestionsDB
             return false;
         }
         
-        //returnFavorites(truth/dare)
-        //-takes truth or dare parameter and returns top “50” questions
+        function checkPassword($user)
+        {
+            $select = 'SELECT password FROM `user_table` WHERE username = :user';
+             
+            $statement = $this->_pdo->prepare($select);
+            $statement->bindValue(':user', $user, PDO::PARAM_INT);
+            $statement->execute();
+             
+            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                
+                $creds = $row['password'];
+            }
+            
+            return $creds;
+
+        }
         
+        function addQuestion($tOrD, $questionContent, $category, $user)
+        {
+            
+            $set = 1;
+            if($tOrD == "dareQuestion"){
+                
+                $insert = 'INSERT INTO questions (username, category, question, dare) VALUES (:user, :category, :question, :set)';
+            } else {
+               
+               $insert = 'INSERT INTO questions (username, category, question, truth) VALUES (:user, :category, :question, :set)';
+            }
+            
+            $statement = $this->_pdo->prepare($insert);
+            $statement->bindValue(':user', $user, PDO::PARAM_STR);
+            $statement->bindValue(':category', $category, PDO::PARAM_STR);
+            $statement->bindValue(':question', $questionContent, PDO::PARAM_STR);
+            $statement->bindValue(':set', $set, PDO::PARAM_INT);
+            
+            $statement->execute();
+            
+        }
+                
         //userSubmissions(username)
         //-takes a username and returns an array of rows ‘question => “The question”’,
         //‘truth/dare’ => “”Truth” or “Dare””, ‘category’ => “Relationship etc”
+        function userSubmissions($user, $torD){
+            
+            
+            $select = 'SELECT category, question FROM `questions` WHERE username = :user AND ' . $torD . ' = 1';
+             
+            $statement = $this->_pdo->prepare($select);
+            $statement->bindValue(':user', $user, PDO::PARAM_STR);
+            $statement->execute();
+            
+            //echo $select;
+            
+          
+            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+             
+             $results[] = $row;
+            }
+            return $results;
+        }
+        
+        function randomQuestion($tOrD, $category)
+        {
+            $select = 'SELECT question FROM `questions` WHERE category = :category AND ' . $tOrD . ' = 1';
+             
+            $statement = $this->_pdo->prepare($select);
+            $statement->bindValue(':category', $category, PDO::PARAM_STR);
+            $statement->execute();
+            
+            //echo $select;
+            $count = 0;
+          
+            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+             
+             $results[$count] = $row;
+             $count = $count + 1;
+             
+            }
+            
+            $arrayLength = count($results);
+            
+            $chosen = rand(0, $arrayLength-1);
+            
+            $result = $results[$chosen];
+            
+            $trueResult = $result['question'];
+            
+            
+            
+            
+            return $trueResult;
+        }
+        
+            
+    function personalRandomQuestion($username, $tOrD)
+    {
+         $select = 'SELECT question FROM `questions` WHERE username = :username AND ' . $tOrD . ' = 1';
+             
+            $statement = $this->_pdo->prepare($select);
+            $statement->bindValue(':username', $username, PDO::PARAM_STR);
+            $statement->execute();
+            
+            //echo $select;
+            $count = 0;
+          
+            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+             
+             $results[$count] = $row;
+             $count = $count + 1;
+             
+            }
+            
+            $arrayLength = count($results);
+            
+            $chosen = rand(0, $arrayLength-1);
+            
+            $result = $results[$chosen];
+            
+            $trueResult = $result['question'];
+            
+            return $trueResult;
+    }
+    
+    function favoriteQuestions($tOrD)
+    {
+        $select = 'SELECT question FROM `questions` WHERE  ' . $tOrD . ' = 1 ORDER BY likes DESC';
+             
+            $statement = $this->_pdo->prepare($select);
+            $statement->bindValue(':category', $category, PDO::PARAM_STR);
+            $statement->execute();
+            
+            //echo $select;
+            $count = 0;
+          
+            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+             
+             $results[$count] = $row;
+             $count = $count + 1;
+             
+            }
+            
+            $arrayLength = count($results);
+        
+            $chosen = rand(0, intval($arrayLength/10));
+    
+            $result = $results[$chosen];
+            
+            $trueResult = $result['question'];
+            
+            return $trueResult;
+    }
+    
+    function likeOrDislike($question, $likeOrDislike)
+    {
+        
+        if($likeOrDislike == "like"){
+            $update = 'UPDATE `questions` SET likes = likes + 1 WHERE  question = :question';
+        } else {
+            $update = 'UPDATE `questions` SET likes = likes - 1 WHERE  question = :question';
+        }
+             
+        $statement = $this->_pdo->prepare($update);
+        $statement->bindValue(':question', $question, PDO::PARAM_STR);
+        $statement->execute();
+    }
+    
+    function updateScore($user = "unknown12345123123123", $chicken){
+        if ($chicken == "quitter") {
+            $update = 'UPDATE `user_table` SET score = score - 10 WHERE  username = :user';
+        } else {
+            $update = 'UPDATE `user_table` SET score = score + 10 WHERE  username = :user';
+        }
+             
+        $statement = $this->_pdo->prepare($update);
+        $statement->bindValue(':user', $user, PDO::PARAM_STR);
+        $statement->execute();
+    }
+    
+    function getScore($user = "unknown"){
+            
+        $select = 'SELECT score FROM `user_table` WHERE username = :user';
+             
+            $statement = $this->_pdo->prepare($select);
+            $statement->bindValue(':user', $user, PDO::PARAM_STR);
+            $statement->execute();
+            
+            //echo $select;
+            $count = 0;
+          
+            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+             
+             $results[$count] = $row;
+             $count = $count + 1;
+             
+            }
+            
+            $score = $results[0];
+            
+            if($user == "" ){
+                $score['score'] = 'NA';
+            }
+            
+            return $score['score'];
+    }
+    
+    function countSubmissions($user){
+        
+        $total = count($this->userSubmissions($user, "truth")) + count($this->userSubmissions($user, "dare"));
+        
+        return $total;
+    }
+    
+    function viewUsers()
+        {
+            $select = 'SELECT username, score FROM `user_table` ORDER BY score DESC';
+            $statement = $this->_pdo->prepare($select);
+            $statement->bindValue(':username', $username, PDO::PARAM_STR);
+            $statement->execute();
+           
+            //echo $select;
+            $count = 0;
+          
+            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+             
+             $results[$count] = $row;
+             $count = $count + 1;
+             
+            }
+            
+            return $results;
+        }
+    
+        
+        
+        //returnFavorites(truth/dare)
+        //-takes truth or dare parameter and returns top “50” questions
+
         
         
         //allTruth() = all Random button

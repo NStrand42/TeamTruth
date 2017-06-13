@@ -1,58 +1,63 @@
 <head>
 <?php echo $this->render('view/header.html',NULL,get_defined_vars(),0); ?>
 </head>
-<body>
+
+
+<body class="base">
     <div class="container">
+
+
         <div class="row">
             <!--Left side-->
             <div class="col-sm-3">
                 
                 <div class="row">
-                    <div class="col-sm-6">
-                        <ul>
-                            <li>Truth</li>
-                            <li>Relationships</li>
-                            <li>Favorites</li>
-                            <li>Teen</li>
-                            <li>Kids</li>
-                            <li>Random</li>
-                            <li>My personal</li>
-                            <li>Create you own</li>
-                        </ul>
+                    <div class="col-sm-6 truthsList">
+                        <div class="row">
+                            <div class="tab">
+                            Truth
+                            <button id="defaultOpenT" class="tablinksT truthButtons btn" onclick="openT(event, 'tRelationships')">Relationships</button>
+                            <button class="tablinksT truthButtons btn" onclick="openT(event, 'tFavorites')">Favorites</button>
+                            <button class="tablinksT truthButtons btn" onclick="openT(event, 'tTeens')">Teens</button>
+                            <button class="tablinksT truthButtons btn" onclick="openT(event, 'tKids')">Kids</button>
+                            <button class="tablinksT truthButtons btn" onclick="openT(event, 'tRandom')">Random</button>
+                            <button class="tablinksT truthButtons btn" onclick="openT(event, 'tMyPersonal')">My Personal</button>
+                            <button class="tablinksT truthButtons btn" onclick="openT(event, 'tCreateYourOwn')">Create Your Own</button>
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 daresList">
+                        <div class="row">
                         <ul>
                             <li>Dare</li>
-                            <li>Relationships</li>
-                            <li>Favorites</li>
-                            <li>Teen</li>
-                            <li>Kids</li>
-                            <li>Random</li>
-                            <li>My personal</li>
-                            <li>Create your own</li>
+                            <li><button id="defaultOpenD" class="tablinksD dareButtons btn" onclick="openD(event, 'dRelationships')">Relationships</button></li>
+                            <li><button class="tablinksD dareButtons btn" onclick="openD(event, 'dFavorites')">Favorites</button></li>
+                            <li><button class="tablinksD dareButtons btn" onclick="openD(event, 'dTeens')">Teens</button></li>
+                            <li><button class="tablinksD dareButtons btn" onclick="openD(event, 'dKids')">Kids</button></li>
+                            <li><button class="tablinksD dareButtons btn" onclick="openD(event, 'dRandom')">Random</button></li>
+                            <li><button class="tablinksD dareButtons btn" onclick="openD(event, 'dMyPersonal')">My Personal</button></li>
+                            <li><button class="tablinksD dareButtons btn" onclick="openD(event, 'dCreateYourOwn')">Create Your Own</button></li>
                         </ul>                       
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <a href="./howtopage" class="btn btn-lg btn-success btn-block login-button" role="button">Tutorial</a>
-                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="row">
-                    <div class ="col-sm-12">
+                    <div class="col-sm-12">
+                       <a href="./howtopage" class="btn btn-lg btn-success btn-block login-button tdbutton"role="button">Tutorial</a>   
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class ="col-sm-12" id="welcome">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <h3>Welcome John Doe!</h3>
+                                <h3>Welcome <?= $username ?></h3>
                                 <hr />
-                                <h3>Score : ###</h3>
+                                <h3>Score : <?= $score ?></h3>
                                 <hr />
-                                <h3>Submissions: ###</h3>    
+                                <h3>Submissions: <?= $submissions ?><h3>    
                             </div>
                         </div>     
                     </div>
@@ -63,35 +68,175 @@
             <div class="col-sm-9">
                 
                 <div class="row">
+                    
+                    <?php if ($usernameError  != null): ?>
+                        <div class="col-sm-12">
+                            <div class="alert alert-danger">
+                                <strong><?= $usernameError ?></strong>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                    
+                   <?php if ($passwordError  != null): ?>
+                        <div class="col-sm-12">
+                            <div class="alert alert-danger">
+                                <strong><?= $passwordError ?></strong>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                   
+                   <?php if ($passwordsDontMatch  != null): ?>
+                        <div class="col-sm-12">
+                            <div class="alert alert-danger">
+                                <strong><?= $passwordsDontMatch ?></strong>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                    
                     <div class="col-sm-6">
                         
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="panel panel-default">
-                                    <div class="panel-body">
-                                       <h1>Player 1: ##</h1> 
-                                    </div>                               
-                                </div>     
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading"><h1>Truth</h1></div>
-                                    <div class="panel-body"><h6>Name your favorite food</h6></div>
-                                    <div class="panel-heading"><h1>Chicken -1 Score</h1></div>
                                     
-                                    <div class="panel-heading">
-                                        <div class="row">
-                                            <div class="col-sm-6">                                         
-                                                <h1>Like</h1>                                             
-                                            </div>
-                                            <div class="col-sm-6">                                           
-                                                <h1>Dislike</h1>                                             
+                                    <div id="tRelationships" class="tabcontentT">
+                                        <div class="panel-heading truth"><h1>Truth</h1></div>
+                                        <div class="col-sm-12 truth">
+                                            <div class="panel-body question"><h6><?= $tRelationship ?></h6></div>
+                                            <div class="panel-heading chicken"><h3>Chicken -1 Score</h3></div>
+                                        
+                                            <div class="">
+                                                <div class="row">
+                                                    <div class="col-sm-12" >
+                                                        <form action="./" method="post" class="form-horizontal">
+                                                        <div class="col-sm-6 like">
+                                                            <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="like" value="<?= $tRelationship ?>" type="submit">Like</button>
+                                                        </div>
+                                                        <div class="col-sm-6 like">                                           
+                                                            <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="dislike" value="<?= $tRelationship ?>" type="submit">Dislike</button>                                            
+                                                        </div>
+                                                         </form>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    
+                                    <div id="tFavorites" class="tabcontentT">
+                                        <div class="panel-heading truth"><h1>Truth</h1></div>
+                                        <div class="col-sm-12 truth">
+                                            <div class="panel-body question"><h6><?= $tFavorites ?></h6></div>
+                                            <div class="panel-heading chicken"><h3>Chicken -1 Score</h3></div>
+                                        
+                                            <div class="">
+                                                <div class="row">
+                                                    <div class="col-sm-12" >
+                                                       <form action="./" method="post" class="form-horizontal">
+                                                            <div class="col-sm-6 like">
+                                                                <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="like" value="<?= $tFavorites ?>" type="submit">Like</button>
+                                                            </div>
+                                                            <div class="col-sm-6 like">                                           
+                                                                <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="dislike" value="<?= $tFavorites ?>" type="submit">Dislike</button>                                            
+                                                            </div>
+                                                         </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="tTeens" class="tabcontentT">
+                                        <div class="panel-heading truth"><h1>Truth</h1></div>
+                                        <div class="col-sm-12 truth">
+                                            <div class="panel-body question"><h6><?= $tTeens ?></h6></div>
+                                            <div class="panel-heading chicken"><h3>Chicken -1 Score</h3></div>
+                                        
+                                            <div class="">
+                                                <div class="row">
+                                                    <div class="col-sm-12" >
+                                                        <form action="./" method="post" class="form-horizontal">
+                                                        <div class="col-sm-6 like">
+                                                            <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="like" value="<?= $tTeens ?>" type="submit">Like</button>
+                                                        </div>
+                                                        <div class="col-sm-6 like">                                           
+                                                            <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="dislike" value="<?= $tTeens ?>" type="submit">Dislike</button>                                            
+                                                        </div>
+                                                         </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="tKids" class="tabcontentT">
+                                        <div class="panel-heading truth"><h1>Truth</h1></div>
+                                        <div class="col-sm-12 truth">
+                                            <div class="panel-body question"><h6><?= $tKids ?></h6></div>
+                                            <div class="panel-heading chicken"><h3>Chicken -1 Score</h3></div>
+                                        
+                                            <div class="">
+                                                <div class="row">
+                                                    <div class="col-sm-12" >
+                                                        <form action="./" method="post" class="form-horizontal">
+                                                        <div class="col-sm-6 like">
+                                                            <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="like" value="<?= $tKids ?>" type="submit">Like</button>
+                                                        </div>
+                                                        <div class="col-sm-6 like">                                           
+                                                            <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="dislike" value="<?= $tKids ?>" type="submit">Dislike</button>                                            
+                                                        </div>
+                                                         </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="tRandom" class="tabcontentT">
+                                        <div class="panel-heading truth"><h1>Truth</h1></div>
+                                        <div class="col-sm-12 truth">
+                                            <div class="panel-body question"><h6><?= $tRandom ?></h6></div>
+                                            <div class="panel-heading chicken"><h3>Chicken -1 Score</h3></div>
+                                        
+                                            <div class="">
+                                                <div class="row">
+                                                    <div class="col-sm-12" >
+                                                        <form action="./" method="post" class="form-horizontal">
+                                                        <div class="col-sm-6 like">
+                                                            <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="like" value="<?= $tRandom ?>" type="submit">Like</button>
+                                                        </div>
+                                                        <div class="col-sm-6 like">                                           
+                                                            <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="dislike" value="<?= $tRandom ?>" type="submit">Dislike</button>                                            
+                                                        </div>
+                                                         </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="tMyPersonal" class="tabcontentT">
+                                        <div class="panel-heading truth"><h1>Truth</h1></div>
+                                        <div class="col-sm-12 truth">
+                                            <div class="panel-body question"><h6><?= $tMyPersonal ?></h6></div>
+                                            <div class="panel-heading chicken"><h3>Chicken -1 Score</h3></div>
+                                        
+                                            <div class="">
+                                                <div class="row">
+                                                    <div class="col-sm-12" >
+                                                        <form action="./" method="post" class="form-horizontal">
+                                                            <div class="col-sm-6 like">
+                                                                <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="like" value="<?= $tMyPersonal ?>" type="submit">Like</button>
+                                                            </div>
+                                                            <div class="col-sm-6 like">                                           
+                                                                <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="dislike" value="<?= $tMyPersonal ?>" type="submit">Dislike</button>                                            
+                                                            </div>
+                                                         </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                                 
                             </div>
@@ -100,34 +245,153 @@
                     </div>
                     
                     <div class="col-sm-6">
-                        
+                              
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="panel panel-default">
-                                    <div class="panel-body">
-                                       <h1>Player 2: ###</h1> 
-                                    </div>                               
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading"><h1>Dare</h1></div>
-                                    <div class="panel-body"><h6>Do a handstand</h6></div>
-                                    <div class="panel-heading"><h1>Chicken -4 Score</h1></div>
                                     
-                                    <div class="panel-heading">
-                                        <div class="row">
-                                            <div class="col-sm-6">                                         
-                                                <h1>Like</h1>                                             
-                                            </div>
-                                            <div class="col-sm-6">                                           
-                                                <h1>Dislike</h1>                                             
+                                    
+                                    <div id="dRelationships" class="tabcontentD">
+                                        <div class="panel-heading dare"><h1>Dare</h1></div>
+                                        <div class="col-sm-12 dare">
+                                            <div class="panel-body question"><h6><?= $dRelationship ?></h6></div>
+                                            <div class="panel-heading chicken"><h3>Chicken -4 Score</h3></div>
+                                            
+                                            <div class="">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <form action="./" method="post" class="form-horizontal">
+                                                            <div class="col-sm-6 like">
+                                                                <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="like" value="<?= $dRelationship ?>" type="submit">Like</button>
+                                                            </div>
+                                                            <div class="col-sm-6 like">                                           
+                                                                <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="dislike" value="<?= $dRelationship ?>" type="submit">Dislike</button>                                            
+                                                            </div>
+                                                         </form>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    
+                                    <div id="dFavorites" class="tabcontentD">
+                                        <div class="panel-heading dare"><h1>Dare</h1></div>
+                                        <div class="col-sm-12 dare">
+                                            <div class="panel-body question"><h6><?= $dFavorites ?></h6></div>
+                                            <div class="panel-heading chicken"><h3>Chicken -4 Score</h3></div>
+                                            
+                                            <div class="">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <form action="./" method="post" class="form-horizontal">
+                                                            <div class="col-sm-6 like">
+                                                                <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="like" value="<?= $dFavorites ?>" type="submit">Like</button>
+                                                            </div>
+                                                            <div class="col-sm-6 like">                                           
+                                                                <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="dislike" value="<?= $dFavorites ?>" type="submit">Dislike</button>                                            
+                                                            </div>
+                                                         </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="dTeens" class="tabcontentD">
+                                        <div class="panel-heading dare"><h1>Dare</h1></div>
+                                        <div class="col-sm-12 dare">
+                                            <div class="panel-body question"><h6><?= $dTeens ?></h6></div>
+                                            <div class="panel-heading chicken"><h3>Chicken -4 Score</h3></div>
+                                            
+                                            <div class="">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <form action="./" method="post" class="form-horizontal">
+                                                            <div class="col-sm-6 like">
+                                                                <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="like" value="<?= $dTeens ?>" type="submit">Like</button>
+                                                            </div>
+                                                            <div class="col-sm-6 like">                                           
+                                                                <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="dislike" value="<?= $dTeens ?>" type="submit">Dislike</button>                                            
+                                                            </div>
+                                                         </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="dKids" class="tabcontentD">
+                                        <div class="panel-heading dare"><h1>Dare</h1></div>
+                                        <div class="col-sm-12 dare">
+                                            <div class="panel-body question"><h6><?= $dKids ?></h6></div>
+                                            <div class="panel-heading chicken"><h3>Chicken -4 Score</h3></div>
+                                            
+                                            <div class="">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <form action="./" method="post" class="form-horizontal">
+                                                            <div class="col-sm-6 like">
+                                                                <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="like" value="<?= $dKids ?>" type="submit">Like</button>
+                                                            </div>
+                                                            <div class="col-sm-6 like">                                           
+                                                                <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="dislike" value="<?= $dKids ?>" type="submit">Dislike</button>                                            
+                                                            </div>
+                                                         </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="dRandom" class="tabcontentD">
+                                        <div class="panel-heading dare"><h1>Dare</h1></div>
+                                        <div class="col-sm-12 dare">
+                                            <div class="panel-body question"><h6><?= $dRandom ?></h6></div>
+                                            <div class="panel-heading chicken"><h3>Chicken -4 Score</h3></div>
+                                            
+                                            <div class="">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <form action="./" method="post" class="form-horizontal">
+                                                            <div class="col-sm-6 like">
+                                                                <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="like" value="<?= $dRandom ?>" type="submit">Like</button>
+                                                            </div>
+                                                            <div class="col-sm-6 like">                                           
+                                                                <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="dislike" value="<?= $dRandom ?>" type="submit">Dislike</button>                                            
+                                                            </div>
+                                                         </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="dMyPersonal" class="tabcontentD">
+                                        <div class="panel-heading dare"><h1>Dare</h1></div>
+                                        <div class="col-sm-12 dare">
+                                            <div class="panel-body question"><h6><?= $dMyPersonal ?></h6></div>
+                                            <div class="panel-heading chicken"><h3>Chicken -4 Score</h3></div>
+                                            
+                                            <div class="">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <form action="./" method="post" class="form-horizontal">
+                                                            <div class="col-sm-6 like">
+                                                                <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="like" value="<?= $dMyPersonal ?>" type="submit">Like</button>
+                                                            </div>
+                                                            <div class="col-sm-6 like">                                           
+                                                                <button class="btn btn-lg btn-success btn-block login-button tdbutton" name="dislike" value="<?= $dMyPersonal ?>" type="submit">Dislike</button>                                            
+                                                            </div>
+                                                         </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    
+                                    
                                 </div>                                
                             </div>
                         </div>
@@ -136,7 +400,7 @@
                     
                     <div class="col-sm-8 col-sm-offset-2">
                         <div class="panel panel-default">
-                            <div class="panel body"><h1>Player 1's Turn! Score ###</h1></div>                         
+                            <div class="panel body"><h1><?= $turn ?></h1></div>                         
                         </div>    
                     </div>
                     
@@ -146,17 +410,17 @@
                             
                             <?php if ($usernameCheck): ?>
                                 
-                                    <a href="./logout" class="btn btn-lg btn-success btn-block login-button" role="button">Logout</a>    
+                                    <a href="./logout" class="btn btn-lg btn-success btn-block login-button tdbutton" role="button">Log Out</a>    
                                 
                                 <?php else: ?>
-                                    <button type="modal" class="btn btn-lg btn-success btn-block login-button" data-toggle="modal" data-target="#myModal">Create User</button>
+                                    <button type="modal" class="btn btn-lg btn-success btn-block login-button tdbutton" data-toggle="modal" data-target="#myModal">Create User</button>
 
                                     <!-- Modal -->
                                     <div class="modal fade" id="myModal" role="dialog">
                                       <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                           <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <button type="button" class="close tdbutton"  data-dismiss="modal">&times;</button>
                                             <h4 class="modal-title">Create User</h4>
                                           </div>
                                           <div class="modal-body">
@@ -165,16 +429,16 @@
                                                     <label for="inputUsername" class="sr-only">Username</label>
                                                     <input type="text"  class="form-control" name="createUsername" placeholder="Username" value="<?= $username ?>" required autofocus>
                                                     <label for="inputPassword" class="sr-only">Password</label>
-                                                    <input type="password" class="form-control" name="createPassword" placeholder="Password"  required autofocus>
+                                                    <input type="password" id="password" class="form-control" onkeyup="checkPassword();" name="createPassword" placeholder="Password"  required autofocus>
                                                     <label for="inputVerifyPassword" class="sr-only">Password</label>
-                                                    <input type="password" class="form-control" name="verifyPassword" placeholder="Re-enter Password"  required autofocus>
+                                                    <input type="password" id="verify" class="form-control" onkeyup="checkPassword();" name="verifyPassword" placeholder="Re-enter Password"  required autofocus>
                                                 </div>
                                                 
-                                              <button class="btn btn-lg btn-success btn-block login-button" type="submit">Log in</button>
+                                              <button class="btn btn-lg btn-success btn-block login-button tdbutton" type="submit">Log in</button>
                                             </form>
                                           </div>
                                           <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-default tdbutton" data-dismiss="modal">Close</button>
                                           </div>
                                         </div>
                                       </div>
@@ -190,17 +454,17 @@
                             
                             <?php if ($usernameCheck): ?>
                                 
-                                    <a href="./submissions" class="btn btn-lg btn-success btn-block login-button" role="button">My Submissions</a>
+                                    <a href="./submissions" class="btn btn-lg btn-success btn-block login-button tdbutton" role="button">My Submissions</a>
                                 
                                 <?php else: ?>
-                                    <button type="modal" class="btn btn-lg btn-success btn-block login-button" data-toggle="modal" data-target="#myModal2">Login</button>
+                                    <button type="modal" class="btn btn-lg btn-success btn-block login-button tdbutton" data-toggle="modal" data-target="#myModal2">Login</button>
                                     
                                     <!-- Modal -->
                                     <div class="modal fade" id="myModal2" role="dialog">
                                       <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                           <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <button type="button" class="close button" data-dismiss="modal">&times;</button>
                                             <h4 class="modal-title">Login</h4>
                                           </div>
                                           <div class="modal-body">
@@ -212,11 +476,11 @@
                                                     <input type="password" class="form-control" name="password" placeholder="Password"  required autofocus>
                                                 </div>
                                                 
-                                              <button class="btn btn-lg btn-success btn-block login-button" type="submit">Log in</button>
+                                              <button class="btn btn-lg btn-success btn-block login-button tdbutton" type="submit">Log in</button>
                                             </form>
                                           </div>
                                           <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-default tdbutton" data-dismiss="modal">Close</button>
                                           </div>
                                         </div>
                                       </div>
@@ -231,4 +495,82 @@
             </div>
         </div>
     </div>
+    
+    <script>
+function openT(evt, cityName) {
+    var i, tabcontent, tablinks;
+    
+    tabcontent = document.getElementsByClassName("tabcontentT");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinksT");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" tabTColor", "");
+    }
+
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " tabTColor";
+}
+
+
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpenT").click();
+</script>
+    
+<script>
+function openD(evt, cityName) {
+    var i, tabcontent, tablinks;
+
+    tabcontent = document.getElementsByClassName("tabcontentD");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinksD");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" tabDColor", "");
+    }
+
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " tabDColor";
+}
+
+
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpenD").click();
+</script>
+
+<script>
+
+    function checkPassword()
+    {
+    
+        var password1 = document.getElementById('password');
+        var password2 = document.getElementById('verify');
+        
+        var message = document.getElementById('confirmMessage');
+        
+        var alertGo = "#66cc66";
+        var alertStop = "#FF0000";
+        
+
+        var reUpper = /^(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[^a-zA-Z0-9])(?!.*\s).{6,}$/;
+
+        
+        if(password1.value == password2.value){
+            password2.style.backgroundColor = alertGo
+            message.style.color = alertGo;
+            message.innerHTML = "Passwords Match!";
+        } else {
+            password2.style.backgroundColor = alertStop;
+            message.style.color = alertStop;
+            message.innerHTML = "Passwords Must Match!";
+        }
+        
+    }
+</script>
+
+
 </body>
